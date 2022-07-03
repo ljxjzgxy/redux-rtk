@@ -8,3 +8,4 @@ services:
       - '3002:80'
     volumes:
       - ./:/frontend
+    container_name: rtk-web
