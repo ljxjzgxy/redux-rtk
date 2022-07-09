@@ -20,6 +20,9 @@ function Header() {
           <li>
             <Link to="/user">Users</Link>
           </li>
+          <li>
+            <Link to="/todo">Todos</Link>
+          </li>
         </ul>
         <button onClick={() => dispatch(increaseCount())}>{count}</button>
       </nav>

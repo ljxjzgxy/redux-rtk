@@ -9,6 +9,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 // import NotFound from "./components/NotFound";
 import UserList from "./features/users/UserList";
 import UserPage from "./features/users/UserPage";
+import ToDoList from "./features/todo/ToDoList";
 
 function App() {
   return (
@@ -29,6 +30,9 @@ function App() {
         <Route path="user">
           <Route index element={<UserList />} />
           <Route path=":userId" element={<UserPage />} />
+        </Route>
+        <Route path="todo">
+          <Route index element={<ToDoList />} />
         </Route>
 
         {/* <Route path="*" element={<NotFound />} /> */}
