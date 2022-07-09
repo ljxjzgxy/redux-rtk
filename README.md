@@ -19,6 +19,9 @@ docker run -d --name redux-rtk -p 3001:3000 redux-rtk:v0
 docker image rm redux-rtk:v0
 docker rmredux-rtk
 
+docker build -t json-server:v1 -f Dockerfile.json-server .  
+docker run -d --name json-server -p 3501:3501 json-server:v1
+
 ## docker compose
 
 docker-compose up -d --build

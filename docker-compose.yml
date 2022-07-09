@@ -1,15 +1,23 @@
 version: "3.9"
 services:
   web:
-    container_name: rtk.Web
+    image: rtk.web
+    container_name: Web
     build:
       context: .
       dockerfile: Dockerfile-deploy
     ports:
       - 3002:80
-    # volumes:
-    #   - ./:/frontend
-    #   - /app/node_modules 
-    # environment:
-    #   - CHOKIDAR_USEPOLLING=true
-    #   - COMPOSE_CONVERT_WINDOWS_PATHS=1 
+    depends_on:
+      - json-server
+
+  json-server:
+    image: rtk.db
+    container_name: db
+    build:
+      context: .
+      dockerfile: Dockerfile.json-server
+    ports:
+      - 3501:3501
+   
+

@@ -1,0 +1,10 @@
+FROM node:18-alpine3.15
+
+WORKDIR /jsonserver
+COPY /data/db.json ./data/
+RUN npm i json-server -g
+# EXPOSE 3501
+
+# CMD ["json-server", "/jsonserver/data/db.json","3501"]
+
+CMD json-server --watch /jsonserver/data/db.json --host 0.0.0.0 --port 3501
