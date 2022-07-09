@@ -1,11 +1,15 @@
 version: "3.9"
 services:
   web:
+    container_name: rtk.Web
     build:
       context: .
       dockerfile: Dockerfile-deploy
     ports:
-      - '3002:80'
-    volumes:
-      - ./:/frontend
-    container_name: rtk-web
+      - 3002:80
+    # volumes:
+    #   - ./:/frontend
+    #   - /app/node_modules 
+    # environment:
+    #   - CHOKIDAR_USEPOLLING=true
+    #   - COMPOSE_CONVERT_WINDOWS_PATHS=1 

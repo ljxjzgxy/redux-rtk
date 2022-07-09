@@ -15,12 +15,14 @@ npm i @fortawesome/react-fontawesome
 ## docker
 
 docker build -t redux-rtk:v0 .
-
 docker run -d --name redux-rtk -p 3001:3000 redux-rtk:v0
+docker image rm redux-rtk:v0
+docker rmredux-rtk
 
 ## docker compose
 
-docker-compose up -d --build redux-rtk-deploy
+docker-compose up -d --build
+docker compose stop
 
 ## json-server
 
